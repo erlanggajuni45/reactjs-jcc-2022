@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Registrasi</title>
+</head>
+<body>
+    <h1>Register Akun Baru!</h1>
+    <h3>Isilah form dibawah ini</h3>
+    <form method="post">
+        <p>First Name:</p>
+        <input type="text" id="fname" name="fname">
+        <p>Last Name:</p>
+        <input type="text" id="lname" name="lname">
+        <p>Gender:</p>
+        <input type="radio" name="gender" id="male">Male
+        <input type="radio" name="gender" id="female">Female
+        <input type="radio" name="gender" id="other">Other
+        <p>Nationality:</p>
+        <select name="nationality" id="nationality">
+            <option value="indonesian">Indonesian</option>
+            <option value="korean">Korean</option>
+            <option value="chinese">Chinese</option>
+            <option value="other">Other</option>
+        </select>
+        <p>Sedang Fokus Belajar:</p>
+        <select name="focus" id="focus">
+            <option value="reactjs">Reactjs</option>
+            <option value="laravel">Laravel</option>
+            <option value="golang">GoLang</option>
+            <option value="other">Other</option>
+        </select>
+        <p>Language Spoken:</p>
+        <input type="checkbox" name="language1" id="indonesia">Bahasa Indonesia
+        <input type="checkbox" name="language2" id="english">English
+        <input type="checkbox" name="language3" id="indonesia">Other
+        <p>Deskripsi Diri Saya:</p>
+        <textarea name="desc" id="desc"></textarea>
+        <br><br>
+        <input type="submit" value="register">
+    </form>
+</body>
+</html>
