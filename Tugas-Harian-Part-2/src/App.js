@@ -1,5 +1,7 @@
 import React from 'react';
-import Tugas11 from './Tugas-11/tugas11.js';
+/** TUGAS 11 */
+// import Tugas11 from './Tugas-11/tugas11.js';
+import Tugas12 from './Tugas-12/tugas12.js';
 
 /** TUGAS 10 */
 // import image from './logo.png';
@@ -20,7 +22,9 @@ import Tugas11 from './Tugas-11/tugas11.js';
 const App = () => {
   return(
     <>
-    <Tugas11 />
+
+    {/* <Tugas11/>*/}
+    <Tugas12 />     
     </>
     /** TUGAS 10 */
     // <div className="container">
