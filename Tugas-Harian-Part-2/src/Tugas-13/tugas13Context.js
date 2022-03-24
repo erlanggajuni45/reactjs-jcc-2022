@@ -1,5 +1,6 @@
 import React, {useState, createContext, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export const Tugas13Context = createContext();
 
@@ -13,6 +14,8 @@ export const Tugas13Provider = (props) => {
 
     const [currentId, setCurrentId] = useState(null)
 
+    let history = useHistory()
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios.get(`https://backendexample.sanbercloud.com/api/student-scores`)
@@ -24,17 +27,7 @@ export const Tugas13Provider = (props) => {
 
     const handleEdit = (event) => {
         let idMhs = event.target.value
-            axios.get(`https://backendexample.sanbercloud.com/api/student-scores/${idMhs}`)
-            .then(res => {
-                console.log(res)
-                let data = res.data
-                setInput({
-                    nama: data.name,
-                    mataKuliah: data.course,
-                    nilai: data.score
-                })
-                setCurrentId(data.id)
-            })
+        history.push(`/tugas14/edit/${idMhs}`)
         }
 
     const handleHapus = (event) => {
@@ -64,6 +57,7 @@ export const Tugas13Provider = (props) => {
                         .then(res => {
                             let data = res.data
                             setDataMhs([...dataMhs, {id: data.id, name: data.name, course: data.course, score: data.score}])
+                            history.push('/tugas14')
                         })
                     } else {
                         axios.put(`https://backendexample.sanbercloud.com/api/student-scores/${currentId}`, {name: nama, course: mataKuliah, score: nilai})
@@ -73,6 +67,7 @@ export const Tugas13Provider = (props) => {
                             singleMhs.course = mataKuliah
                             singleMhs.score = nilai
                             setDataMhs([...dataMhs])
+                            history.push('/tugas14')
                         })
                     }
             

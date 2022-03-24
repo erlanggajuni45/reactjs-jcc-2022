@@ -1,103 +1,73 @@
- *{
-  margin:0;
-  padding: 0;
+.header {
+    background-color: #FFFFFF;
+    display: flex;
+    width:100%;
+    justify-content: space-between;
 }
 
-.container {
-  width: 400px;
-  display: grid;
-  background-color: white;
-  padding: 10px;
-  margin: 0 auto;
-  box-shadow: 0px 0px 27px -8px rgba(0,0,0,0.75);
+.navbar-light{
+    background-color: #ffffff;
+    color: #aaa;
+    border: 1px solid #aaa;
 }
 
-p {
-  margin-bottom: 5px;
-  padding: 0 5px;
+.navbar-dark{
+    background-color: #121212;
+    color: #aaa;
+    border: 1px solid #1c1c1a;
+
 }
 
-.img {
-  margin: 10px auto;
+.header ul{
+    list-style-type: none;
+}
+
+.header li{
+    display: inline-block;
+    padding-right: 25px;
+    margin: 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #aaa;
+
+}
+
+.button-switch{
+    background-color: #aaa;
+    color: white;
+    width: 200px; 
+    font-size: 12px;
+    margin: 15px auto;
+    display: flex;
+    border-radius: 4px;
+    padding: 14px;
+    box-shadow: 0 9px #999;
+    outline: none;
+}
+
+.button-switch:active {
+    background-color: #3e8e41;
+    box-shadow: 0 9px #666;
+    transform: translateY(8px);
+  }
+
+.button-switch:hover {
+    background-color: #aaa;
 }
 
 h1{
-  font-weight: 200;
-  color: #aaa;
-  padding-left: 10px;
+    margin: 20px;
 }
 
-.list {
-  display: block;
-  position: relative;
-  padding-left: 45px;
-  padding-top: 5px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.btn-create{
+    background-color: #34eb7d;
+    color: white;
+    margin: 0 135px 20px;
+    width: 250px;
 }
 
-/* Hide the browser's default checkbox */
-.list input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 5px;
-  left: 14px;
-  height: 20px;
-  width: 20px;
-  border: 1px solid #aaa;
-  border-radius: 2px;
-}
-
-/* When the checkbox is checked, add a blue background */
-.list input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.list input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.list .checkmark:after {
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.button{
-  margin: 10px 0;
-  background-color: #03c2fc;
-  color: white;
-  border: 0;
-  height: 40px; 
-}
-
-.button:active{
-  background-color: red;
+.btn-create:hover {
+    background-color: #34eb7d;
 }

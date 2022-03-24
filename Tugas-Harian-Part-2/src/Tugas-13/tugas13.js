@@ -6,10 +6,10 @@ import "./tugas13.css";
 
 const Tugas13 = () => {
     return(
-        <Tugas13Provider>
+      <>  
         <Tugas13Table />
         <Tugas13Form />
-        </Tugas13Provider>
+    </>
     )
 }
 
