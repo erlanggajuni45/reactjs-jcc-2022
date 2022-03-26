@@ -9,12 +9,16 @@ import Tugas13 from '../Tugas-13/tugas13';
 import { Tugas13Provider } from '../Tugas-13/tugas13Context';
 import Tugas14Form from '../Tugas-14/tugas14Form';
 import Tugas14Table from '../Tugas-14/tugas14Table';
+import { Tugas15Provider } from '../Tugas-15/tugas15Context';
+import Tugas15Form from '../Tugas-15/tugas15Form';
+import Tugas15Table from '../Tugas-15/tugas15Table';
 
 const Routes = () => {
     return(
         <>
             <Router>
             <Tugas13Provider>
+            <Tugas15Provider>
             <SwitchColorProvider>
             <Navbar />
                 <Switch>
@@ -45,9 +49,22 @@ const Routes = () => {
                     <Route exact path="/tugas14/edit/:slug">
                         <Tugas14Form />
                     </Route>
+
+                    <Route exact path="/tugas15">
+                        <Tugas15Table />
+                    </Route>
+
+                    <Route exact path="/tugas15/create">
+                        <Tugas15Form />
+                    </Route>
+
+                    <Route exact path="/tugas15/edit/:slug">
+                        <Tugas15Form />
+                    </Route>
                 </Switch>
                 
                 </SwitchColorProvider>
+            </Tugas15Provider>
             </Tugas13Provider>
 
             </Router>

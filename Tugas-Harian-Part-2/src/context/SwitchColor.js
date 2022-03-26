@@ -4,7 +4,7 @@ export const SwitchColorContext = createContext();
 
 export const SwitchColorProvider = (props) => {
 
-    let [value, setValue] = useState('navbar-light')
+    let [value, setValue] = useState('#f8fafc')
     return(
         <SwitchColorContext.Provider
             value={{

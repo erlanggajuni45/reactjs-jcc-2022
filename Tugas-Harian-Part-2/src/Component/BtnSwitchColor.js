@@ -1,22 +1,25 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SwitchColorContext } from "../context/SwitchColor";
 
-const BtnSwitchColor = () => {
+const BtnSwitchColor = (props) => {
     let {value, setValue} = useContext(SwitchColorContext)
-    let color = (value == 'navbar-light') ? "Dark" : "Light"
+    let color = (value == '#f8fafc') ? "Dark" : "Light"
 
     const handleSwitch = () => {
-        if (value == 'navbar-light'){
-            setValue('navbar-dark')
-        } else if(value == 'navbar-dark') {
-            setValue('navbar-light')
+        if (value == '#f8fafc'){
+            setValue('#0f172a')
+        } else if(value == '#0f172a') {
+            setValue('#f8fafc')
         }
 
     }
 
     return(
         <>
-        <button className="button-switch" onClick={handleSwitch}>Change Navbar to {color} Theme</button>
+        <button onClick={handleSwitch} type="button" 
+        class={props.class}>
+                {color}
+        </button>
         </>
     )
 }

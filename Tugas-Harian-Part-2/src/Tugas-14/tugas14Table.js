@@ -18,7 +18,7 @@ const Tugas14Table = (props) => {
 
     return(
         <>
-        <BtnSwitchColor />
+        <BtnSwitchColor class="button-switch" />
         { dataMhs !== null && 
         (<div>
             <h1>Data Nilai Mahasiswa</h1>

@@ -37,12 +37,12 @@ ul li a{
 .button-switch{
     background-color: #aaa;
     color: white;
-    width: 200px; 
-    font-size: 12px;
+    width: 150px; 
+    font-size: 20px;
     margin: 15px auto;
     display: flex;
     border-radius: 4px;
-    padding: 14px;
+    padding: 10px 50px;
     box-shadow: 0 9px #999;
     outline: none;
 }
