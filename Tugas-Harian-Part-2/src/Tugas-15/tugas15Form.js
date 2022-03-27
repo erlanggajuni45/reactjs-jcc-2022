@@ -22,7 +22,6 @@ const Tugas15Form = () => {
         if (slug !== undefined){
             axios.get(`https://backendexample.sanbercloud.com/api/student-scores/${slug}`)
             .then(res => {
-                console.log(res)
                 let data = res.data
                 setInput({
                     nama: data.name,

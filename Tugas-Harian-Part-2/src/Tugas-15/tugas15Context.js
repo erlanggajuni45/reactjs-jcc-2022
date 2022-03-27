@@ -13,35 +13,19 @@ export const Tugas15Provider = (props) => {
     });
 
     const [currentId, setCurrentId] = useState(null)
-    const [alert, setAlert] = useState(null)
+    const [alert, setAlert] = useState("")
+    const [show, setShow] = useState(false)
+
 
     let history = useHistory()
 
     useEffect(() => {
-        setTimeout(() => {
+        
         const fetchData = async () => {
             const result = await axios.get(`https://backendexample.sanbercloud.com/api/student-scores`)
-            setDataMhs(result.data.map(x => {return {id: x.id, name: x.name, course: x.course, score: x.score}}))
-            if (alert !== "") {
-                if (alert === "delete"){
-                    return(
-                    <div class="fixed w-1/6 bottom-6 bg-yellow-200 border-yellow-600 text-yellow-600 border-l-4 p-4" role="alert">
-                    <p class="font-bold">
-                    Danger
-                    </p>
-                    <p>
-                    Battery is low, your phone can&#x27;t take a photo
-                    </p>
-                    </div>
-                    )
-                } else if (alert === "update") {
-                } else if (alert === "input") {
-                }
-            }
+            setDataMhs(result.data.map(x => {return {id: x.id, name: x.name, course: x.course, score: x.score}}))  
         }
         fetchData()
-        }, 3000);
-        setAlert(null)
     }, [])
 
     const handleEdit = (event) => {
@@ -56,6 +40,7 @@ export const Tugas15Provider = (props) => {
             let newDataMhs = dataMhs.filter(el => {return el.id !== idMhs})
             setDataMhs(newDataMhs)
             setAlert("delete")
+            setShow(true)
         })
     }
 
@@ -77,6 +62,8 @@ export const Tugas15Provider = (props) => {
                         .then(res => {
                             let data = res.data
                             setDataMhs([...dataMhs, {id: data.id, name: data.name, course: data.course, score: data.score}])
+                            setAlert("create")
+                            setShow(true)
                             history.push('/tugas15')
                         })
                     } else {
@@ -87,6 +74,8 @@ export const Tugas15Provider = (props) => {
                             singleMhs.course = mataKuliah
                             singleMhs.score = nilai
                             setDataMhs([...dataMhs])
+                            setAlert("update")
+                            setShow(true)
                             history.push('/tugas15')
                         })
                     }
@@ -120,7 +109,9 @@ export const Tugas15Provider = (props) => {
         const state = {
             dataMhs, setDataMhs,
             input,setInput,
-            currentId, setCurrentId
+            currentId, setCurrentId,
+            alert, setAlert,
+            show, setShow
         }
         
         const functionHandle = {

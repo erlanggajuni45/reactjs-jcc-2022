@@ -4,7 +4,7 @@ export const SwitchColorContext = createContext();
 
 export const SwitchColorProvider = (props) => {
 
-    let [value, setValue] = useState('#f8fafc')
+    let [value, setValue] = useState("bg-[#f8fafc]")
     return(
         <SwitchColorContext.Provider
             value={{

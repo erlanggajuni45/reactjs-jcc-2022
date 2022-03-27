@@ -12,7 +12,7 @@ const Navbar = () => {
         <>
         
 <div>
-    <nav class={`bg-[${value}] dark:bg-gray-800 shadow`}>
+    <nav class={`${value} dark:bg-gray-800 shadow`}>
         <div class="max-w-7xl mx-auto px-8">
             <div class="flex items-center justify-between h-16">
                 <div class=" flex items-center">
@@ -55,15 +55,7 @@ const Navbar = () => {
     </nav>
 </div>
 
-        {/* <div className={`header ${value}`}>
-        <ul>
-            <li><Link to="/">Tugas 10</Link></li>
-            <li><Link to="/tugas11">Tugas 11</Link></li>
-            <li><Link to="/tugas12">Tugas 12</Link></li>
-            <li><Link to="/tugas13">Tugas 13</Link></li>
-            <li><Link to="/tugas14">Tugas 14</Link></li>
-        </ul>
-        </div> */}
+
         </>
     )
 }

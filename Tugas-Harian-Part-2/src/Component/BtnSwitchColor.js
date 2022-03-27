@@ -3,13 +3,13 @@ import { SwitchColorContext } from "../context/SwitchColor";
 
 const BtnSwitchColor = (props) => {
     let {value, setValue} = useContext(SwitchColorContext)
-    let color = (value == '#f8fafc') ? "Dark" : "Light"
+    let color = (value == "bg-[#f8fafc]") ? "Dark" : "Light"
 
     const handleSwitch = () => {
-        if (value == '#f8fafc'){
-            setValue('#0f172a')
-        } else if(value == '#0f172a') {
-            setValue('#f8fafc')
+        if (value == "bg-[#f8fafc]"){
+            setValue("bg-[#0f172a]")
+        } else if(value == "bg-[#0f172a]") {
+            setValue("bg-[#f8fafc]")
         }
 
     }
