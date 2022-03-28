@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
+import Login from '../auth/login';
+import Register from '../auth/register';
 import Navbar from '../Component/navbar';
 import { SwitchColorProvider } from '../context/SwitchColor';
 import Tugas10 from '../Tugas-10/tugas10';
@@ -60,6 +62,12 @@ const Routes = () => {
 
                     <Route exact path="/tugas15/edit/:slug">
                         <Tugas15Form />
+                    </Route>
+                    <Route exact path ="/login">
+                        <Login />
+                    </Route>
+                    <Route exact path ="/register">
+                        <Register />
                     </Route>
                 </Switch>
                 

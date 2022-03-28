@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { SwitchColorContext } from "../context/SwitchColor";
 import image from '../Tugas-10/logo.png'
 import BtnSwitchColor from "./BtnSwitchColor";
+import { useHistory } from "react-router-dom";
+import jsCookie from "js-cookie";
 
 const Navbar = () => {
     
     let {value, setValue} = useContext(SwitchColorContext)
-
+    let history = useHistory()
     return(
         <>
         
@@ -39,7 +41,25 @@ const Navbar = () => {
                             <Link to="/tugas15" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 Tugas 15
                             </Link>
-                            
+                            {!jsCookie.get('token') && 
+                            <>
+                            <Link to="/register" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Register 
+                            </Link>
+                            <Link to="/login" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Login
+                            </Link>
+                            </>
+                            }
+                            {jsCookie.get('token') &&
+                            <a href="" class="text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                onClick={() => {
+                                jsCookie.remove('token')
+                                window.location ="/"
+                            }}>
+                                Logout
+                            </a>
+                            }
                         </div>
                     </div>
                 </div>
