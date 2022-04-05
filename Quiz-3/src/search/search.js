@@ -20,7 +20,7 @@ const Search = () => {
     })
     return (
           <>
-            <h1>Popular Mobile Apps</h1>
+            <h1 className="text-center">Popular Mobile Apps</h1>
             { dataGame !== null && 
             (<div>
                 {

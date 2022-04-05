@@ -17,7 +17,7 @@ export const GlobalProvider = (props) => {
         imageUrl: "",
         androidApp: true,
         iosApp: true,
-        search: ""      
+        search: ""
     });
 
     const [currentId, setCurrentId] = useState(null)
@@ -28,11 +28,11 @@ export const GlobalProvider = (props) => {
     let history = useHistory()
 
     useEffect(() => {
-        
+
          const fetchData = async () => {
              const result = await axios.get(`https://backendexample.sanbercloud.com/api/mobile-apps`)
              setDataGame(result.data.map(x => {return {id: x.id,
-                                                        name: x.name, 
+                                                        name: x.name,
                                                         description: x.description,
                                                         category: x.category,
                                                         size: x.size,
@@ -41,7 +41,7 @@ export const GlobalProvider = (props) => {
                                                         imageUrl: x.image_url,
                                                         releaseYear: x.release_year,
                                                         androidApp: x.is_android_app,
-                                                        iosApp: x.is_ios_app}}))  
+                                                        iosApp: x.is_ios_app}}))
          }
          fetchData()
      }, [])
@@ -81,8 +81,8 @@ export const GlobalProvider = (props) => {
          name, category, description,
          releaseYear, size, price,
          rating, imageUrl,
-         androidApp, iosApp } = input     
-        
+         androidApp, iosApp } = input
+
          if(name !== "") {
              if(category !== ""){
                  if(description !== ""){
@@ -93,7 +93,7 @@ export const GlobalProvider = (props) => {
                                      if(imageUrl !== ""){
 
                      if (currentId === null) {
-                         axios.post(`https://backendexample.sanbercloud.com/api/mobile-apps`, {name: name, 
+                         axios.post(`https://backendexample.sanbercloud.com/api/mobile-apps`, {name: name,
                                                                                                 description: description,
                                                                                                 category: category,
                                                                                                 size: size,
@@ -106,7 +106,7 @@ export const GlobalProvider = (props) => {
                          .then(res => {
                              let data = res.data
                              setDataGame([...dataGame, {id: data.id,
-                                                        name: data.name, 
+                                                        name: data.name,
                                                         description: data.description,
                                                         category: data.category,
                                                         size: data.size,
@@ -121,7 +121,7 @@ export const GlobalProvider = (props) => {
                              history.push('/mobile-list')
                          })
                      } else {
-                          axios.put(`https://backendexample.sanbercloud.com/api/mobile-apps/${currentId}`, {name: name, 
+                          axios.put(`https://backendexample.sanbercloud.com/api/mobile-apps/${currentId}`, {name: name,
                                                                                                                 description: description,
                                                                                                                 category: category,
                                                                                                                 size: size,
@@ -132,24 +132,24 @@ export const GlobalProvider = (props) => {
                                                                                                                 is_android_app: androidApp,
                                                                                                                 is_ios_app: iosApp})
                           .then(() => {
-                              let singleGame = dataGame.find(el => el.id === currentId)
-                              singleGame.name = name
-                              singleGame.description = description
-                              singleGame.category = category
-                              singleGame.size = size
-                              singleGame.price = price
-                              singleGame.rating = rating
-                              singleGame.image_url = imageUrl
-                              singleGame.release_year = releaseYear
-                              singleGame.is_android_app = androidApp
-                              singleGame.is_ios_app = iosApp
-                              setDataGame([...dataGame])
-                              setAlert("update")
-                              setShow(true)
-                              history.push('/mobile-list')
+                              let singleGame = dataGame.find((el) => el.id === currentId);
+                              singleGame.name = name;
+                              singleGame.description = description;
+                              singleGame.category = category;
+                              singleGame.size = size;
+                              singleGame.price = price;
+                              singleGame.rating = rating;
+                              singleGame.image_url = imageUrl;
+                              singleGame.release_year = releaseYear;
+                              singleGame.is_android_app = androidApp;
+                              singleGame.is_ios_app = iosApp;
+                              setDataGame([...dataGame]);
+                              setAlert("update");
+                              setShow(true);
+                              history.push('/mobile-list');
                           })
                      }
-            
+
                      setInput({
                         name: "",
                         category: "",
@@ -172,13 +172,13 @@ export const GlobalProvider = (props) => {
 }
 }
 }
-        
+
     const handleSize = (params) => {
         if (params >= 1000) {
-            return `${params/1000} GB` 
+            return `${params/1000} GB`
         } else {
             return `${params} MB`
-        } 
+        }
         }
     const handlePrice = (params) => {
         if (params === 0) {
@@ -197,8 +197,8 @@ export const GlobalProvider = (props) => {
             apple = "iOS"
         }
 
-        return `${apk} 
-                ${apple}` 
+        return `${apk}
+                ${apple}`
 
     }
 
@@ -209,7 +209,7 @@ export const GlobalProvider = (props) => {
             alert, setAlert,
             show, setShow
         }
-        
+
         const functionHandle = {
             handleChange,
             handleSubmit,

@@ -1,6 +1,4 @@
-import axios from "axios";
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Home = () => {
@@ -11,12 +9,13 @@ const Home = () => {
 
     return (
           <>
-            <h1>Popular Mobile Apps</h1>
-            { dataGame !== null && 
+            <h1 className="text-4xl font-semibold text-center">Popular Mobile Apps</h1>
+            <br />
+            { dataGame !== null &&
             (<div>
                 {
                     dataGame.map((item, index) => {
-                    return(      
+                    return(
                         <div key={index}>
                   <h2>{item.name}</h2>
                   <h5>Release Year : {item.releaseYear}</h5>
@@ -42,8 +41,8 @@ const Home = () => {
                     )
                 })
             }
-            
-            
+
+
                 </div>)}
         </>
       );

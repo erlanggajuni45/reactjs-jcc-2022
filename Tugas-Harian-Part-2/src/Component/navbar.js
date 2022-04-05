@@ -7,12 +7,12 @@ import { useHistory } from "react-router-dom";
 import jsCookie from "js-cookie";
 
 const Navbar = () => {
-    
+
     let {value, setValue} = useContext(SwitchColorContext)
     let history = useHistory()
     return(
         <>
-        
+
 <div>
     <nav class={`${value} dark:bg-gray-800 shadow`}>
         <div class="max-w-7xl mx-auto px-8">
@@ -41,10 +41,10 @@ const Navbar = () => {
                             <Link to="/tugas15" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 Tugas 15
                             </Link>
-                            {!jsCookie.get('token') && 
+                            {!jsCookie.get('token') &&
                             <>
                             <Link to="/register" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                Register 
+                                Register
                             </Link>
                             <Link to="/login" class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 Login
@@ -55,7 +55,7 @@ const Navbar = () => {
                             <a href="" class="text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                                 onClick={() => {
                                 jsCookie.remove('token')
-                                window.location ="/"
+                                history.push("/")
                             }}>
                                 Logout
                             </a>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 </div>
                 <div class="block">
                     <div class="ml-4 flex items-center md:ml-6">
-                        <BtnSwitchColor 
+                        <BtnSwitchColor
                         class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg" />
                     </div>
                 </div>

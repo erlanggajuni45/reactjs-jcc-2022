@@ -34,12 +34,12 @@ const Login = () => {
             <form onSubmit={handleLogin} class="my-20">
                 <h1 class="text-3xl">Form Login</h1>
                 <label>Email</label>
-                <input onChange={handleChange} value={input.email} type="text" name="email" 
+                <input onChange={handleChange} value={input.email} type="text" name="email"
                 class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
                 <br />
                 <label>Password</label>
-                <input onChange={handleChange} value={input.password} type="password" name="password" 
+                <input onChange={handleChange} value={input.password} type="password" name="password"
                 class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
                 <br />
