@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { GlobalContext } from "../Context/GlobalContext";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { GlobalContext } from '../Context/GlobalContext';
+import { toast } from 'react-hot-toast';
 
 const HeroSection = () => {
   const { state, functionHandle } = useContext(GlobalContext);
@@ -8,18 +9,18 @@ const HeroSection = () => {
 
   const { handleChange, handleChangeSearch, handleSearch, handleFilter } =
     functionHandle;
-
   const { handleSalary } = functionHandle;
-
   return (
     <>
-      <div class="bg-white dark:bg-gray-800 mt-16">
-        <div class="bg-blue-800 text-center w-full mx-auto py-16 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-            <span class="block">Sedang Mencari Lowongan? </span>
-            <span class="block text-white">Website ini cocok buat kamu!</span>
+      <div className="bg-white dark:bg-gray-800 mt-16">
+        <div className="bg-blue-800 text-center w-full mx-auto py-16 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+          <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
+            <span className="block">Sedang Mencari Lowongan? </span>
+            <span className="block text-white">
+              Website ini cocok buat kamu!
+            </span>
           </h2>
-          <div class="lg:mt-0 lg:flex-shrink-0">
+          <div className="lg:mt-0 lg:flex-shrink-0">
             <form
               onSubmit={handleSearch}
               className="items-center justify-center mt-12 sm:flex"
@@ -47,7 +48,7 @@ const HeroSection = () => {
               type="text"
               value={input.company_city}
               name="company_city"
-              class="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+              className="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
               placeholder="Lokasi Perusahaan...."
             />
             <br />
@@ -56,7 +57,7 @@ const HeroSection = () => {
               type="text"
               value={input.job_type}
               name="job_type"
-              class="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+              className="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
               placeholder="Tipe Pekerjaan...."
             />
             <br />
@@ -65,12 +66,12 @@ const HeroSection = () => {
               type="text"
               value={input.job_tenure}
               name="job_tenure"
-              class="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
+              className="px-4 py-2 text-gray-700 bg-white border rounded-md sm:mx-2 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"
               placeholder="Job Tenure...."
             />
             <button
               type="submit"
-              class="px-4 py-2 text-white bg-blue-700 rounded-md sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              className="px-4 py-2 text-white bg-blue-700 rounded-md sm:mx-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
             >
               Filter
             </button>
@@ -79,7 +80,7 @@ const HeroSection = () => {
             onClick={() => {
               setFetchStatus(true);
             }}
-            class="my-2 px-4 py-2 text-white bg-red-700 rounded-md sm:mx-2 hover:bg-red-600 focus:outline-none focus:bg-blue-600"
+            className="my-2 px-4 py-2 text-white bg-red-700 rounded-md sm:mx-2 hover:bg-red-600 focus:outline-none focus:bg-blue-600"
           >
             Reset Filter
           </button>
@@ -122,7 +123,7 @@ const HeroSection = () => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="icon icon-tabler icon-tabler-building h-5 w-5 mr-2"
                                 viewBox="0 0 24 24"
-                                stroke-width={2}
+                                strokeWidth={2}
                                 stroke="currentColor"
                                 fill="none"
                                 strokeLinecap="round"

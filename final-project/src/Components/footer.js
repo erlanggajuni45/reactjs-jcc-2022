@@ -1,35 +1,35 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => {
   return (
     <>
-      <footer class="flex-col bottom-0 flex items-center justify-between drop-shadow-2xl border-b px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row">
+      <footer className="flex-col bottom-0 flex items-center justify-between drop-shadow-2xl border-b px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row">
         <a
           href="#"
-          class="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
+          className="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
         >
           Job Vacancy
         </a>
 
-        <p class="py-2 text-gray-800 dark:text-white sm:py-0">
+        <p className="py-2 text-gray-800 dark:text-white sm:py-0">
           &copy; Erlangga Juni Saputra
         </p>
 
-        <div class="flex -mx-2">
+        <div className="flex -mx-2">
           <a
             href="https://twitter.com/erlanggajuni45"
-            class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+            className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
             aria-label="Twitter"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-brand-twitter w-5 h-5 fill-current"
+              className="icon icon-tabler icon-tabler-brand-twitter w-5 h-5 fill-current"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
@@ -38,11 +38,11 @@ const Footer = () => {
 
           <a
             href="https://facebook.com/erlanggajuni.belekok"
-            class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+            className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
             aria-label="Facebook"
           >
             <svg
-              class="w-5 h-5 fill-current"
+              className="w-5 h-5 fill-current"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,11 +53,11 @@ const Footer = () => {
 
           <a
             href="https://github.com/ErlanggaJuni"
-            class="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+            className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
             aria-label="Github"
           >
             <svg
-              class="w-5 h-5 fill-current"
+              className="w-5 h-5 fill-current"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,8 @@
-import jsCookie from "js-cookie";
-import { useState, useRef, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import { GlobalContext } from "../Context/GlobalContext";
+import jsCookie from 'js-cookie';
+import { useState, useRef, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { GlobalContext } from '../Context/GlobalContext';
 
 // Profile Dropdown
 const ProfileDropDown = (props) => {
@@ -16,11 +16,11 @@ const ProfileDropDown = (props) => {
     const handleDropDown = (e) => {
       if (!profileRef.current.contains(e.target)) setStates(false);
     };
-    document.addEventListener("click", handleDropDown);
+    document.addEventListener('click', handleDropDown);
   }, []);
 
   return (
-    <div className={`relative ${props.class}`}>
+    <div className={`relative  ${props.class}`}>
       <div className="flex items-center space-x-4">
         <button
           ref={profileRef}
@@ -30,6 +30,7 @@ const ProfileDropDown = (props) => {
           <img
             src={dataUser.image_url}
             className="w-full h-full rounded-full"
+            alt=""
           />
         </button>
         <div className="lg:hidden">
@@ -39,7 +40,7 @@ const ProfileDropDown = (props) => {
       </div>
       <ul
         className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${
-          states ? "" : "lg:hidden"
+          states ? '' : 'lg:hidden'
         }`}
       >
         <li>
@@ -61,10 +62,10 @@ const ProfileDropDown = (props) => {
         <li>
           <a
             onClick={() => {
-              jsCookie.remove("token");
-              jsCookie.remove("user");
-              jsCookie.remove("password");
-              history.push("/");
+              jsCookie.remove('token');
+              jsCookie.remove('user');
+              jsCookie.remove('password');
+              history.push('/');
             }}
             className="cursor-pointer block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5"
           >
@@ -80,9 +81,9 @@ export default () => {
   const [menustates, setMenustates] = useState(false);
 
   const navigation = [
-    { title: "Dashboard", path: "/dashboard" },
-    { title: "List Loker", path: "/dashboard/list-job-vacancy" },
-    { title: "Posting Loker", path: "/dashboard/list-job-vacancy/form/create" },
+    { title: 'Dashboard', path: '/dashboard' },
+    { title: 'List Loker', path: '/dashboard/list-job-vacancy' },
+    { title: 'Posting Loker', path: '/dashboard/list-job-vacancy/form/create' },
   ];
   return (
     <nav className="bg-white border-b drop-shadow-lg">
@@ -98,7 +99,7 @@ export default () => {
         <div className="flex-1 flex items-center justify-between">
           <div
             className={`bg-white absolute z-20 w-full top-12 left-0 p-4 border-b lg:static lg:block lg:border-none ${
-              menustates ? "" : "hidden"
+              menustates ? '' : 'hidden'
             }`}
           >
             <ul className="space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
@@ -106,7 +107,7 @@ export default () => {
                 <li
                   key={idx}
                   className={`text-gray-600 hover:text-gray-900 ${
-                    menustates ? "" : "hidden"
+                    menustates ? '' : 'hidden'
                   }`}
                 >
                   <Link to={item.path}>{item.title}</Link>

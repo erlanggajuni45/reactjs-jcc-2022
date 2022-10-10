@@ -1,7 +1,7 @@
-import axios from "axios";
-import jsCookie from "js-cookie";
-import React, { createContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import axios from 'axios';
+import jsCookie from 'js-cookie';
+import React, { createContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export const GlobalContext = createContext();
 
@@ -9,47 +9,47 @@ export const GlobalProvider = (props) => {
   const [dataJob, setDataJob] = useState([]);
   const [fetchStatus, setFetchStatus] = useState(true);
   const [input, setInput] = useState({
-    title: "",
-    jobDesc: "",
-    jobQual: "",
-    jobType: "Onsite",
-    jobTenure: "",
+    title: '',
+    jobDesc: '',
+    jobQual: '',
+    jobType: 'Onsite',
+    jobTenure: '',
     jobStatus: 1,
-    companyName: "",
-    companyImageUrl: "",
-    companyCity: "",
+    companyName: '',
+    companyImageUrl: '',
+    companyCity: '',
     salaryMin: 0,
     salaryMax: 0,
 
     // Register & Login
-    name: "",
-    imageUrl: "",
-    email: "",
-    password: "",
+    name: '',
+    imageUrl: '',
+    email: '',
+    password: '',
 
     // Change Password
-    currentPassword: "",
-    newPassword: "",
-    confirmPassword: "",
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: '',
 
     // Filter
-    company_city: "",
-    job_type: "",
-    job_tenure: "",
+    company_city: '',
+    job_type: '',
+    job_tenure: '',
   });
 
   const [currentId, setCurrentId] = useState(null);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const [show, setShow] = useState(false);
-  const [alert, setAlert] = useState("");
-  const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState('');
+  const [message, setMessage] = useState('');
 
   let dataUser;
-  if (jsCookie.get("token")) {
-    dataUser = JSON.parse(jsCookie.get("user"));
+  if (jsCookie.get('token')) {
+    dataUser = JSON.parse(jsCookie.get('user'));
   } else {
-    dataUser = "";
+    dataUser = '';
   }
 
   let history = useHistory();
@@ -85,7 +85,7 @@ export const GlobalProvider = (props) => {
     axios
       .delete(`https://dev-example.sanbercloud.com/api/job-vacancy/${idJob}`, {
         headers: {
-          Authorization: "Bearer " + jsCookie.get("token"),
+          Authorization: 'Bearer ' + jsCookie.get('token'),
         },
       })
       .then(() => {
@@ -94,8 +94,8 @@ export const GlobalProvider = (props) => {
         });
         setDataJob(newDataJob);
         setFetchStatus(true);
-        setAlert("Danger");
-        setMessage("Lowongan berhasil dihapus");
+        setAlert('Danger');
+        setMessage('Lowongan berhasil dihapus');
         setShow(true);
       });
   };
@@ -117,10 +117,10 @@ export const GlobalProvider = (props) => {
         });
 
         setDataJob([...result]);
-        setAlert("Info");
-        setMessage("Hasil Pencarian lowongan " + search);
+        setAlert('Info');
+        setMessage('Hasil Pencarian lowongan ' + search);
         setShow(true);
-        setSearch("");
+        setSearch('');
       });
   };
 
@@ -142,10 +142,10 @@ export const GlobalProvider = (props) => {
         });
 
         setDataJob([...result]);
-        setAlert("Info");
-        setMessage("Hasil filter lowongan");
+        setAlert('Info');
+        setMessage('Hasil filter lowongan');
         setShow(true);
-        setInput("");
+        setInput('');
       });
   };
 
@@ -165,17 +165,17 @@ export const GlobalProvider = (props) => {
       salaryMax,
     } = input;
 
-    if (title !== "") {
-      if (jobDesc !== "") {
-        if (jobQual !== "") {
-          if (jobType !== "") {
-            if (jobTenure !== "") {
+    if (title !== '') {
+      if (jobDesc !== '') {
+        if (jobQual !== '') {
+          if (jobType !== '') {
+            if (jobTenure !== '') {
               if (jobStatus == 0 || jobStatus == 1) {
-                if (companyName !== "") {
-                  if (companyImageUrl !== "") {
-                    if (companyCity !== "") {
-                      if (salaryMin !== "" && salaryMin >= 0) {
-                        if (salaryMax !== "" && salaryMax >= salaryMin) {
+                if (companyName !== '') {
+                  if (companyImageUrl !== '') {
+                    if (companyCity !== '') {
+                      if (salaryMin !== '' && salaryMin >= 0) {
+                        if (salaryMax !== '' && salaryMax >= salaryMin) {
                           if (currentId === null) {
                             axios
                               .post(
@@ -196,7 +196,7 @@ export const GlobalProvider = (props) => {
                                 {
                                   headers: {
                                     Authorization:
-                                      "Bearer " + jsCookie.get("token"),
+                                      'Bearer ' + jsCookie.get('token'),
                                   },
                                 }
                               )
@@ -205,21 +205,21 @@ export const GlobalProvider = (props) => {
                                 let data = res.data;
                                 setDataJob([...dataJob, data]);
                                 setFetchStatus(true);
-                                setAlert("Success");
-                                setMessage("Lowongan berhasil ditambahkan");
+                                setAlert('Success');
+                                setMessage('Lowongan berhasil ditambahkan');
                                 setShow(true);
-                                history.push("/dashboard/list-job-vacancy");
+                                history.push('/dashboard/list-job-vacancy');
                               });
                             setInput({
-                              title: "",
-                              jobDesc: "",
-                              jobQual: "",
-                              jobType: "Onsite",
-                              jobTenure: "",
+                              title: '',
+                              jobDesc: '',
+                              jobQual: '',
+                              jobType: 'Onsite',
+                              jobTenure: '',
                               jobStatus: 1,
-                              companyName: "",
-                              companyImageUrl: "",
-                              companyCity: "",
+                              companyName: '',
+                              companyImageUrl: '',
+                              companyCity: '',
                               salaryMin: 0,
                               salaryMax: 0,
                             });
@@ -244,7 +244,7 @@ export const GlobalProvider = (props) => {
                                 {
                                   headers: {
                                     Authorization:
-                                      "Bearer " + jsCookie.get("token"),
+                                      'Bearer ' + jsCookie.get('token'),
                                   },
                                 }
                               )
@@ -266,21 +266,21 @@ export const GlobalProvider = (props) => {
                                 singleDataJob.salary_max = salaryMax;
                                 setDataJob([...dataJob]);
                                 setFetchStatus(true);
-                                setAlert("Info");
-                                setMessage("Lowongan berhasil diupdate");
+                                setAlert('Info');
+                                setMessage('Lowongan berhasil diupdate');
                                 setShow(true);
-                                history.push("/dashboard/list-job-vacancy/");
+                                history.push('/dashboard/list-job-vacancy/');
                               });
                             setInput({
-                              title: "",
-                              jobDesc: "",
-                              jobQual: "",
-                              jobType: "Onsite",
-                              jobTenure: "",
+                              title: '',
+                              jobDesc: '',
+                              jobQual: '',
+                              jobType: 'Onsite',
+                              jobTenure: '',
                               jobStatus: 1,
-                              companyName: "",
-                              companyImageUrl: "",
-                              companyCity: "",
+                              companyName: '',
+                              companyImageUrl: '',
+                              companyCity: '',
                               salaryMin: 0,
                               salaryMax: 0,
                             });
@@ -303,7 +303,7 @@ export const GlobalProvider = (props) => {
     if (param >= 1000000) {
       return `${param / 1000000} Juta`;
     } else if (param == null) {
-      return "";
+      return '';
     } else {
       return param;
     }
@@ -311,22 +311,28 @@ export const GlobalProvider = (props) => {
 
   const handleStatus = (param) => {
     if (param === 1) {
-      return "Dibuka";
+      return 'Dibuka';
     } else if (param === 0) {
-      return "Ditutup";
+      return 'Ditutup';
     } else {
-      return "";
+      return '';
     }
   };
 
   const pemisahRibuan = (num) => {
     if (num !== null) {
-      let num_parts = num.toString().split(".");
-      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      return num_parts.join(".");
+      let num_parts = num.toString().split('.');
+      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      return num_parts.join('.');
     } else {
-      return "";
+      return '';
     }
+  };
+
+  const setAuth = (data, password) => {
+    jsCookie.set('token', data.token);
+    jsCookie.set('user', JSON.stringify(data.user));
+    jsCookie.set('password', password);
   };
 
   const state = {
@@ -358,6 +364,7 @@ export const GlobalProvider = (props) => {
     handleSearch,
     handleFilter,
     pemisahRibuan,
+    setAuth,
   };
 
   return (
